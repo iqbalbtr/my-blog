@@ -49,6 +49,8 @@ function addPreCopyButton() {
       }, 1000);
     });
   }
+
+  observer.observe(document.body, { childList: true, subtree: true });
 }
 
 </script>

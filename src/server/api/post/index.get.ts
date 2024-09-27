@@ -6,16 +6,20 @@ import { Blog, Pagging, ResponseApi } from '~/types/common.type';
 
 export default defineEventHandler(async e => {
 
-    const list = fs.readdirSync(path.resolve(process.cwd(),'src/assets/contents'), { recursive: true });
+    const src = useStorage('root');
+
+    const list = fs.readdirSync(path.resolve(process.cwd(),'public/contents'), { recursive: true });
 
     let result: any[] = []
 
-    list.forEach(data => {
+    list.forEach(async data => {
 
         if ((data as string).split('.').slice(-1)[0] !== 'md')
             return
 
-        const file = fs.readFileSync(path.resolve(process.cwd(),'src/assets/contents', data as string));
+        const file = fs.readFileSync(path.resolve(process.cwd(),'public/contents', data as string));
+        // const file = await src.getItem(`src/assets/contents/${data as string}`) as string;    
+            
         if (file) {
             return result.push({
                 ...matter(file).data,

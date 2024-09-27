@@ -6,7 +6,7 @@ import { ResponseApi } from '~/types/common.type';
 
 export default defineEventHandler(async e => {
 
-    const list = fs.readdirSync(path.resolve(process.cwd(), 'src/assets/contents'), { recursive: true });
+    const list = fs.readdirSync(path.resolve(process.cwd(), 'public/contents'), { recursive: true });
 
     let result = new Set()
 
@@ -15,7 +15,7 @@ export default defineEventHandler(async e => {
         if ((data as string).split('.').slice(-1)[0] !== 'md')
             return
 
-        const file = fs.readFileSync(path.resolve(process.cwd(), 'src/assets/contents', data as string));
+        const file = fs.readFileSync(path.resolve(process.cwd(), 'public/contents', data as string));        
         if (file) {            
             return result.add(matter(file).data.category);
         }

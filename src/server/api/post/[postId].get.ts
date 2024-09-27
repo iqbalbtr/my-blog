@@ -32,9 +32,12 @@ md.use(mdAnchor)
 
 export default defineEventHandler(async e => {
 
-    const { postId } = getRouterParams(e)
+    const { postId } = getRouterParams(e);
 
-    const list = fs.readFileSync(path.resolve(process.cwd(), `src/assets/contents/${postId}.md`));
+    const src = useStorage('root');
+
+    const list = fs.readFileSync(path.resolve(process.cwd(), `public/contents/${postId}.md`));
+    // const list = await src.getItem( `src/assets/contents/${postId}.md`)
 
     if (!list)
         return createError({
