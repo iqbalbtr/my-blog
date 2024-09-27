@@ -1,14 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { fileURLToPath } from 'url';
 import markdownit from 'markdown-it';
 import matter from 'gray-matter';
 import hljs from 'highlight.js'
 import mdAnchor from 'markdown-it-anchor';
 import { Blog, ResponseApi } from '~/types/common.type';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const md = markdownit({
     linkify: true,
@@ -37,7 +34,7 @@ export default defineEventHandler(async e => {
 
     const { postId } = getRouterParams(e)
 
-    const list = fs.readFileSync(path.resolve(__dirname, '..', '..', `src/assets/contents/${postId}.md`));
+    const list = fs.readFileSync(path.resolve(process.cwd(), `src/assets/contents/${postId}.md`));
 
     if (!list)
         return createError({

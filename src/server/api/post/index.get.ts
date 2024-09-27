@@ -4,12 +4,9 @@ import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
 import { Blog, Pagging, ResponseApi } from '~/types/common.type';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 export default defineEventHandler(async e => {
 
-    const list = fs.readdirSync(path.resolve(__dirname, '..', '..', 'src/assets/contents'), { recursive: true });
+    const list = fs.readdirSync(path.resolve(process.cwd(),'src/assets/contents'), { recursive: true });
 
     let result: any[] = []
 
@@ -18,7 +15,7 @@ export default defineEventHandler(async e => {
         if ((data as string).split('.').slice(-1)[0] !== 'md')
             return
 
-        const file = fs.readFileSync(path.resolve(__dirname, '..', '..', 'src/assets/contents', data as string));
+        const file = fs.readFileSync(path.resolve(process.cwd(),'src/assets/contents', data as string));
         if (file) {
             return result.push({
                 ...matter(file).data,
