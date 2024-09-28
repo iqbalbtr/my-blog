@@ -1,25 +1,19 @@
 <script setup lang="ts">
-import type { Blog, Pagging } from '~/types/common.type';
 
 const title = ref('Blog.')
 
 const route = useRoute();
-const blogs = reactive({}) as { blog: Blog[], pagging: Pagging }
-const categories = useFetch('/api/category');
-const tags = useFetch('/api/tag');
+const blog = useBlog();
 
 async function handleRefresh() {
-    await $fetch(`/api/post`, {
-        params: route.query,
-        key: route.fullPath,
-        immediate: true,
-        onResponse: (res) => {
-            Object.assign(blogs, res.response._data.data)
-        }
-    });
+    const value = route.query.tag ?? route.query.category;
+    const req = route.query.tag ? 'tags' : 'category';
+    await blog.handleQuery(req, value as string)
 }
 
-function animateTitle(){
+
+
+function animateTitle() {
     const arr = [
         'Blogs.',
         'Knowledge.',
@@ -32,15 +26,15 @@ function animateTitle(){
 
     const rand = arr[Math.floor(Math.random() * arr.length)];
 
-    for(let i = 0; i < rand.length; i++){
+    for (let i = 0; i < rand.length; i++) {
         setTimeout(() => {
             title.value += rand[i];
-        }, 100 * i); 
+        }, 100 * i);
     }
 }
 
 onMounted(() => {
-    handleRefresh()
+    // handleRefresh(req, value as string)
     const time = setInterval(animateTitle, 2500);
     return () => clearInterval(time)
 });
@@ -54,14 +48,14 @@ onMounted(() => {
 
         <CardSearch />
 
-        <CardCategory v-on:handle-refresh="handleRefresh" :categories="categories.data.value?.data ?? []" />
+        <CardCategory v-on:handle-refresh="handleRefresh" :categories="blog.categories" />
 
         <div class="flex flex-col md:flex-row gap-4 py-8 w-full ">
             <div class="md:w-[40%] animate-accordion-up w-full flex flex-col gap-4">
-                <CardTag v-on:handle-refresh="handleRefresh" :tags="tags.data.value?.data ?? []" />
+                <CardTag v-on:handle-refresh="handleRefresh" :tags="blog.tags" />
             </div>
             <div class="flex flex-col w-full gap-3 animate-accordion-up">
-                <CardPost v-for="blog in blogs.blog ?? []" :blog="blog" />
+                <CardPost v-for="blog in blog.blogs" :blog="blog" />
             </div>
         </div>
     </section>

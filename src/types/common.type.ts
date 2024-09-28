@@ -1,14 +1,15 @@
-export type Blog = {
+import type { ParsedContent } from "@nuxt/content";
+
+export interface Blog extends ParsedContent {
     title: string;
     created_at: string;
     update_at: string;
-    slug: string,
+    _stem: string,
     image: string,
     tags: string[],
     category: string,
     creator: string,
     draft: boolean;
-    body?: string;
     word: number;
 }
 

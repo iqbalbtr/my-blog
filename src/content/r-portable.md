@@ -12,9 +12,9 @@ draft: false
 
 # Daftar Konten
 
-- [R-Portable File](#1.-unduh-file-r-portable-di-website-resminya)
-- [Pemasangan R-Portable](#2.-install-file-r-portable-ke-dalam-sistem)
-- [Contoh Kode Program](#3.-contoh-program-r)
+- [R-Portable File](#_1-unduh-file-r-portable-di-website-resminya)
+- [Pemasangan R-Portable](#_2-install-file-r-portable-ke-dalam-sistem)
+- [Contoh Kode Program](#_3-contoh-program-r)
 
 <br>
 <br>

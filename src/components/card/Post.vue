@@ -4,13 +4,14 @@ import type { Blog } from '~/types/common.type';
 defineProps<{
     blog: Blog
 }>()
+
 </script>
 
 <template>
     <div class="w-full flex justify-between gap-2 rounded-lg bg-secondary-bg px-5 py-4 h-fit md:h-[200px]">
         <div class="flex flex-col h-full justify-between">
             <div class="w-full">
-                <NuxtLink :href="{ path: `/post/${blog.slug}` }"
+                <NuxtLink :href="{ path: `/post/${blog._stem}` }"
                     class="hover:bg-gradient-to-r from-tint/20  w-full transition-all text-xl md:text-3xl py-1 border-l-4 pl-3 border-tint font-semibold line-clamp-2 md:max-w-[70%]">{{
                         blog.title }}</NuxtLink>
                 <div class="flex items-center gap-4">
@@ -40,9 +41,9 @@ defineProps<{
             <div class="flex gap-4 pt-3 text-slate-400">
                 <h5>{{ blog.creator }}</h5>
                 <span>|</span>
-                <h6>{{ blog.word }} words</h6>
+                <h6>{{ totalWord(blog.body?.children) }} words</h6>
             </div>
         </div>
-        <NuxtImg v-if="blog.image" :src="blog.image" class="h-full object-cover  rounded-md aspect-square bg-slate-200 " alt="" />
+        <NuxtImg v-if="blog.image" :src="blog.image" class="h-full hidden md:block object-cover  rounded-md aspect-square bg-slate-200 " alt="" />
     </div>
 </template>

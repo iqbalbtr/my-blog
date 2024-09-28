@@ -1,9 +1,5 @@
 <script setup lang="ts">
 
-defineProps<{
-  data: string
-}>()
-
 const observer = new MutationObserver(addPreCopyButton);
 observer.observe(document.body, { childList: true, subtree: true });
 
@@ -53,10 +49,13 @@ function addPreCopyButton() {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
+const { params } = useRoute()
+
 </script>
 
 <template>
-  <div class="my-6 highlight-code" v-html="data">
+  <div class="my-6 highlight-code">
+    <ContentDoc :path="params.postId as string" />
   </div>
 </template>
 
@@ -65,6 +64,7 @@ function addPreCopyButton() {
   p {
     font-size: 1.2rem;
   }
+
 
   h1 {
     @apply text-[1.3rem] md:text-[2rem];
@@ -104,7 +104,7 @@ function addPreCopyButton() {
     padding-left: 16px;
   }
 
-  p{
+  p {
     @apply text-[.8rem] md:text-[1rem]
   }
 
@@ -120,7 +120,7 @@ function addPreCopyButton() {
     @apply bg-cyan-800/50 py-0 px-1 rounded-md text-cyan-300;
   }
 
-  img{
+  img {
     @apply w-[500px] my-3 object-cover rounded-md;
   }
 

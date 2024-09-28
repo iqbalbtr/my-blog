@@ -1,4 +1,12 @@
 <script lang="ts" setup>
+
+const blog = useBlog();
+
+onMounted(() => {
+    blog.init();
+});
+
+
 </script>
 
 <template>

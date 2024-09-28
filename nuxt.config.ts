@@ -9,6 +9,21 @@ export default defineNuxtConfig({
 
   srcDir: 'src/',
 
+  content: {
+    highlight: {
+      theme: 'one-dark-pro',
+      langs: [
+        'r',
+        "js",
+        "json",
+        "php"
+      ],
+    },
+    markdown: {
+      tags: {}
+    }
+  },
+
   postcss: {
     plugins: {
       tailwindcss: {
@@ -17,21 +32,15 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['@nuxt/image'],
+  modules: [
+    '@nuxt/image',
+    '@nuxt/content',
+    '@pinia/nuxt'
+  ],
   
   app: {
     head: {
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/atom-one-dark.min.css'
-        }
-      ],
-      script: [
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
-        }
-      ]
+     title: 'Iqbal Bahtiar',
     }
   }
 })
