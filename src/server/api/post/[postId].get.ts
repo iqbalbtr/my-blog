@@ -34,10 +34,8 @@ export default defineEventHandler(async e => {
 
     const { postId } = getRouterParams(e);
 
-    const src = useStorage('root');
-
-    const list = fs.readFileSync(path.resolve(process.cwd(), `public/contents/${postId}.md`));
-    // const list = await src.getItem( `src/assets/contents/${postId}.md`)
+    // const list = fs.readFileSync(path.resolve(process.cwd(), `public/contents/${postId}.md`));
+    const list = await $fetch(`https://api.github.com/repos/iqbalbtr/my-blog/contents/src/public/contents/${postId}.md`) as any;    
 
     if (!list)
         return createError({
@@ -48,7 +46,7 @@ export default defineEventHandler(async e => {
             }
         })
 
-    const info = matter(list.toString());
+    const info = matter(atob(list.content));
     const word = info.content.split(' ').length
 
     return {

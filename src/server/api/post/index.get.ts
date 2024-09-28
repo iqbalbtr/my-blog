@@ -6,28 +6,48 @@ import { Blog, Pagging, ResponseApi } from '~/types/common.type';
 
 export default defineEventHandler(async e => {
 
-    const src = useStorage('root');
+    // const src = useStorage('root');
 
-    const list = fs.readdirSync(path.resolve(process.cwd(),'public/contents'), { recursive: true });
+    // const list = fs.readdirSync(path.resolve(process.cwd(),'public/contents'), { recursive: true });
+    const list = await $fetch(`https://api.github.com/repos/iqbalbtr/my-blog/contents/src/public/contents`) as any[];    
 
     let result: any[] = []
 
-    list.forEach(async data => {
+    // list.forEach(async data => {        
 
-        if ((data as string).split('.').slice(-1)[0] !== 'md')
-            return
+    //     if ((data.name as string).split('.').slice(-1)[0] !== 'md')
+    //         return
 
-        const file = fs.readFileSync(path.resolve(process.cwd(),'public/contents', data as string));
-        // const file = await src.getItem(`src/assets/contents/${data as string}`) as string;    
-            
+    //     // const file = fs.readFileSync(path.resolve(process.cwd(), 'public/contents', data as string));
+    //     // const file = await src.getItem(`src/assets/contents/${data as string}`) as string; 
+    //     const file = await $fetch(`https://api.github.com/repos/iqbalbtr/my-blog/contents/src/public/contents/${data.name}`) as any;    
+
+    //     if (file) {
+    //         result.push({
+    //             ...matter(atob(file.content)).data,
+    //             word: matter(atob(file.content)).content.split(' ').length,
+    //             slug: (data.name as string).split('.')[0]
+    //         })
+    //     }
+    // })
+
+    for(const data of list) {        
+
+        if ((data.name as string).split('.').slice(-1)[0] !== 'md')
+            continue;
+
+        // const file = fs.readFileSync(path.resolve(process.cwd(), 'public/contents', data as string));
+        // const file = await src.getItem(`src/assets/contents/${data as string}`) as string; 
+        const file = await $fetch(`https://api.github.com/repos/iqbalbtr/my-blog/contents/src/public/contents/${data.name}`) as any;    
+
         if (file) {
-            return result.push({
-                ...matter(file).data,
-                word: matter(file).content.split(' ').length,
-                slug: (data as string).split('.')[0]
+            result.push({
+                ...matter(atob(file.content)).data,
+                word: matter(atob(file.content)).content.split(' ').length,
+                slug: (data.name as string).split('.')[0]
             })
         }
-    })
+    }
 
     const query = getQuery(e);
 
