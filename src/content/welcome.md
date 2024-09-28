@@ -29,11 +29,11 @@ web.listen(port, () => {
 
 <br>
 
-Hi, Saya iqbal dari jepara, web ini dibuat untuk membagikan aktivitas berkaitan blog saya. Nantinya saya akan mengunggah blog di sini berkaitan opini, cara, atau bahkan hal random yang saya unggah.
+👋, Web ini dibuat untuk membagikan aktivitas berkaitan blog saya. Nantinya akan digunggah blog di sini berkaitan opini, cara, atau bahkan hal random.
 
 <br>
 
-Web ini bersifat open source jadi jika ada yang berminat untuk berkontribusi bisa mengunjungi repository yang saya sediakan. 
+Web ini bersifat open source jadi jika ada yang berminat untuk berkontribusi bisa mengunjungi repository yang saya sediakan. **[Repository](https://github.com/iqbalbtr/my-blog)**
 
 <br>
 

@@ -61,13 +61,13 @@ const { params } = useRoute()
 
 <style>
 .highlight-code {
-  p {
-    font-size: 1.2rem;
+  p, ul, li {
+    @apply text-xs sm:text-base md:text-base
   }
 
 
   h1 {
-    @apply text-[1.3rem] md:text-[2rem];
+    @apply text-[1.1rem] sm:text-[1.5rem] md:text-[2rem];
     font-weight: bolder;
   }
 
@@ -110,7 +110,12 @@ const { params } = useRoute()
 
   pre {
     @apply p-4 rounded-md bg-[#141617];
+
+    code {
+      @apply text-xs sm:text-sm md:text-base
+    }
   }
+
 
   blockquote {
     @apply border-l-4 pl-4 py-2 border-cyan-300 text-cyan-300;
@@ -121,7 +126,7 @@ const { params } = useRoute()
   }
 
   img {
-    @apply w-[500px] my-3 object-cover rounded-md;
+    @apply w-auto sm:w-[500px] md:w-[600px] my-3 object-cover rounded-md;
   }
 
 }
