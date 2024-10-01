@@ -2,7 +2,7 @@
 title: Cara menginstal R-portable
 created_at: 2024-09-27
 update_at: 2024-09-28
-description: ''
+description: 'Cara menginstal R-portable'
 image: /post/r-portable/banner.jpeg
 tags: [Programing, R, Tutorial]
 category: 'Tutorial'
@@ -10,7 +10,7 @@ creator: Iqbal Bahtiar
 draft: false 
 ---
 
-# Daftar Konten
+> Daftar Konten
 
 - [R-Portable File](#_1-unduh-file-r-portable-di-website-resminya)
 - [Pemasangan R-Portable](#_2-install-file-r-portable-ke-dalam-sistem)

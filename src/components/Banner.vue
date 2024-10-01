@@ -32,7 +32,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <section class="min-h-[12vh] sm:min-h-[16vh] md:min-h-[25vh] overflow-hidden flex flex-col justify-center items-center py-14 bg-slate-700 mx-4 rounded-md relative">
-        <h1 class="absolute font-bold text-slate-500 text-[2rem] sm:text-[2.5rem] md:text-[5rem] top-1/2 -translate-y-1/2">{{ title }}</h1>
+    <section class="min-h-[12vh] sm:min-h-[16vh] md:min-h-[25vh] overflow-hidden flex flex-col justify-center items-center py-14 bg-slate-950 mx-4 rounded-md relative">
+        <h1 class="absolute font-bold text-slate-500 text-sm md:text-lg lg:text-2xl top-1/2 -translate-y-1/2">{{ title }}</h1>
     </section>
 </template>

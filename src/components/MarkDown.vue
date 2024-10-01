@@ -1,5 +1,9 @@
 <script setup lang="ts">
 
+defineProps<{
+  data: any
+}>();
+
 const observer = new MutationObserver(addPreCopyButton);
 observer.observe(document.body, { childList: true, subtree: true });
 
@@ -54,14 +58,33 @@ const { params } = useRoute()
 </script>
 
 <template>
-  <div class="my-6 highlight-code">
-    <ContentDoc :path="params.postId as string" />
+  <div class="my-6 highlight-code" v-motion="{
+    initial: {
+      y: 100,
+      opacity: 0
+    },
+    enter: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 200
+      }
+    },
+    leave: {
+      y: -100,
+      opacity: 0,
+    }
+  }">
+    <ContentRenderer :value="data" />
   </div>
 </template>
 
 <style>
 .highlight-code {
-  p, ul, li {
+
+  p,
+  ul,
+  li {
     @apply text-xs sm:text-base md:text-base
   }
 
