@@ -2,20 +2,11 @@
 
 const title = ref('Blog.');
 
-const route = useRoute();
 const blog = useBlog();
 
-
-async function handleRefresh() {
-    const value = route.query.tag ?? route.query.category;
-    const req = route.query.tag ? 'tags' : 'category';
+async function handleRefresh(req: "tags" | "category", value: string) {
     await blog.handleQuery(req, value as string)
 }
-
-watchEffect(() => {
-    console.log(blog.blogs);
-    
-})
 
 
 
@@ -49,7 +40,7 @@ onMounted(() => {
 <template>
     <Banner v-motion="{
         initial: {
-            y: 100,
+            y: 25,
             opacity: 0
         },
         enter: {
@@ -57,7 +48,7 @@ onMounted(() => {
             opacity: 1,
         },
         leave: {
-            y: -100,
+            y: -25,
             opacity: 0,
         }
     }" />
@@ -68,18 +59,18 @@ onMounted(() => {
 
         <CardCategory v-motion="{
             initial: {
-                y: 100,
+                y: 25,
                 opacity: 0
             },
             enter: {
                 y: 0,
                 opacity: 1,
                 transition: {
-                    delay: 100
+                    delay: 25
                 }
             },
             leave: {
-                y: -100,
+                y: -25,
                 opacity: 0,
             }
         }" v-on:handle-refresh="handleRefresh" :categories="blog.categories" />
@@ -87,7 +78,7 @@ onMounted(() => {
         <div class="flex flex-col md:flex-row gap-4 py-8 w-full ">
             <div class="md:w-[40%] w-full flex flex-col gap-4" v-motion="{
                 initial: {
-                    y: 100,
+                    y: 25,
                     opacity: 0
                 },
                 enter: {
@@ -98,7 +89,7 @@ onMounted(() => {
                     }
                 },
                 leave: {
-                    y: -100,
+                    y: -25,
                     opacity: 0,
                 }
             }">
@@ -106,23 +97,25 @@ onMounted(() => {
             </div>
             <div v-motion="{
                 initial: {
-                    y: 100,
+                    y: 25,
                     opacity: 0
                 },
                 enter: {
                     y: 0,
                     opacity: 1,
                     transition: {
-                        delay: 300
+                         delay: 300
                     }
                 },
                 leave: {
-                    y: -100,
+                    y: -25,
                     opacity: 0,
                 }
             }" class="flex flex-col w-full gap-3">
                 <CardPost v-for="blog in blog.blogs" :blog="blog"  />
             </div>
+            
         </div>
+        <button v-if="blog.pagging.page < blog.pagging.totalPage" class="px-6 py-2 text-slate-300 text-sm transition-all active:scale-95 bg-accent w-fit rounded-md self-center mt-6" @click="blog.handlePagination()">Load More</button>
     </section>
 </template>

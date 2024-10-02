@@ -16,44 +16,45 @@ useSeoMeta({
 </script>
 <template>
     <NuxtLayout :name="'blog'">
-        <NuxtImg loading="lazy" decoding="async" v-if="data?.image" :src="data.image" :class="`h-[25vh]  object-cover w-full mb-8 rounded-md`" v-motion="{
-            initial: {
-                y: 100,
-                opacity: 0
-            },
-            enter: {
-                y: 0,
-                opacity: 1,
-            },
-            leave: {
-                y: -100,
-                opacity: 0,
-            }
-        }">
+        <NuxtImg loading="lazy" decoding="async" v-if="data?.image" :src="data.image"
+            :class="`h-[25vh]  object-cover w-full mb-8 rounded-md`" v-motion="{
+                initial: {
+                    y: 25,
+                    opacity: 0
+                },
+                enter: {
+                    y: 0,
+                    opacity: 1,
+                },
+                leave: {
+                    y: -25,
+                    opacity: 0,
+                }
+            }">
         </NuxtImg>
 
         <section class="md:px-12 px-5 md:py-8 py-4 rounded-2xl bg-secondary">
             <div v-if="status == 'success'" class="gap-4 flex flex-col justify-between mb-5">
                 <h1 class="text-2xl md:text-4xl font-bold" v-motion="{
                     initial: {
-                        y: 100,
+                        y: 25,
                         opacity: 0
                     },
                     enter: {
                         y: 0,
                         opacity: 1,
                         transition: {
-                            delay: 100
+                            delay: 25
                         }
                     },
                     leave: {
-                        y: -100,
+                        y: -25,
                         opacity: 0,
                     }
                 }">{{ data?.title ?? '' }}</h1>
                 <div v-motion="{
                     initial: {
-                        y: 100,
+                        y: 25,
                         opacity: 0
                     },
                     enter: {
@@ -64,7 +65,7 @@ useSeoMeta({
                         }
                     },
                     leave: {
-                        y: -100,
+                        y: -25,
                         opacity: 0,
                     }
                 }" class="flex flex-col gap-4 font-sans text-slate-600">
@@ -72,29 +73,39 @@ useSeoMeta({
                         <div class="flex gap-4 pb-1">
                             <h4
                                 class="py-1 text-xs sm:text-sm  md:text-lg font-semibold text-slate-400 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" id="calender">
-                                    <path fill="#fff"
-                                        d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z">
-                                    </path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-calendar">
+                                    <path d="M8 2v4" />
+                                    <path d="M16 2v4" />
+                                    <rect width="18" height="18" x="3" y="4" rx="2" />
+                                    <path d="M3 10h18" />
                                 </svg>
                                 <span>{{ formatDate(data?.created_at ?? '', '-') }}</span>
                             </h4>
                             <h4 v-if="data?.created_at !== data?.update_at"
                                 class="py-1 text-xs sm:text-sm  md:text-lg font-semibold text-slate-400 flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" id="calender">
-                                    <path fill="#fff"
-                                        d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z">
-                                    </path>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-calendar-arrow-up">
+                                    <path d="m14 18 4-4 4 4" />
+                                    <path d="M16 2v4" />
+                                    <path d="M18 22v-8" />
+                                    <path d="M21 11.343V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9" />
+                                    <path d="M3 10h18" />
+                                    <path d="M8 2v4" />
                                 </svg>
                                 <span>{{ formatDate(data?.update_at ?? '', '-') }}</span>
                             </h4>
                         </div>
                         <h4
-                            class="py-1 text-xs sm:text-sm  md:text-lg rounded-md w-fit flex gap-2 items-center text-slate-400">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="23" id="tag">
-                                <path fill="#fff"
-                                    d="M21.12,10.71,12.71,2.29A1,1,0,0,0,12,2H3A1,1,0,0,0,2,3v9a1,1,0,0,0,.29.71l8.42,8.41a3,3,0,0,0,4.24,0L21.12,15a3,3,0,0,0,0-4.24Zm-1.41,2.82h0l-6.18,6.17a1,1,0,0,1-1.41,0L4,11.59V4h7.59l8.12,8.12a1,1,0,0,1,.29.71A1,1,0,0,1,19.71,13.53Z">
-                                </path>
+                            class="py-1 pl-1 text-xs sm:text-sm  md:text-lg rounded-md w-fit flex gap-2 items-center text-slate-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-folder-open-dot">
+                                <path
+                                    d="m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2" />
+                                <circle cx="14" cy="15" r="1" />
                             </svg>
                             <span class="font-semibold">{{ data?.category }}</span>
                         </h4>

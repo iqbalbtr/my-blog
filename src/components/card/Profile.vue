@@ -2,7 +2,7 @@
     <div class="md:mx-28 p-4 pt-16 md:pt-4 flex flex-col md:flex-row gap-12 bg-secondary rounded-lg w-full">
         <NuxtImg v-motion="{
             initial: {
-                y: 100,
+                y: 25,
                 opacity: 0
             },
             enter: {
@@ -13,7 +13,7 @@
                 }
             },
             leave: {
-                y: -100,
+                y: -25,
                 opacity: 0,
             }
         }" src="/image/profile.jpg" class="w-[200px] self-center aspect-square rounded-md" loading="lazy" decoding="async" />
@@ -22,7 +22,7 @@
         <div class="flex flex-col justify-between text-center md:text-left">
             <div v-motion="{
                 initial: {
-                    y: 100,
+                    y: 25,
                     opacity: 0
                 },
                 enter: {
@@ -33,7 +33,7 @@
                     }
                 },
                 leave: {
-                    y: -100,
+                    y: -25,
                     opacity: 0,
                 }
             }">
@@ -44,7 +44,7 @@
 
             <div v-motion="{
                 initial: {
-                    y: 100,
+                    y: 25,
                     opacity: 0
                 },
                 enter: {
@@ -55,7 +55,7 @@
                     }
                 },
                 leave: {
-                    y: -100,
+                    y: -25,
                     opacity: 0,
                 }
             }">

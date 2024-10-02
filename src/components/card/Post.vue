@@ -10,11 +10,11 @@ const route = useRoute()
 </script>
 
 <template>
-    <div class="w-full flex justify-between gap-2 rounded-lg bg-secondary-bg px-5 py-4 h-fit md:h-[200px]">
+    <div class="w-full flex justify-between gap-2 rounded-lg bg-secondary-bg px-5 py-4 h-fit md:h-[200px] animate-accordion-up">
         <div class="flex flex-col h-full justify-between">
             <div class="w-full">
                 <NuxtLink :href="{ path: `/post/${blog._stem}` }"
-                    class="hover:bg-gradient-to-r from-tint/20  w-full transition-all text-xl md:text-3xl py-1 border-l-4 pl-3 border-tint font-semibold line-clamp-2 md:max-w-[70%]">{{
+                    class="hover:bg-gradient-to-r from-tint/20  w-full transition-all text-lg mb-2 md:mb-0 md:text-3xl py-1 border-l-4 pl-3 border-tint font-semibold line-clamp-2 md:max-w-[80%]">{{
                         blog.title }}</NuxtLink>
                 <div class="flex items-center gap-4">
                     <h4 class="py-1 text-xs sm:text-base md:text-lg font-semibold text-slate-400 flex items-center gap-2">
@@ -39,7 +39,7 @@ const route = useRoute()
                             }}</NuxtLink>
                     </div>
                 </div>
-                <p class="text-sm md:hidden md:text-base text-slate-400 line-clamp-2">{{ blog?.description }}</p>
+                    <p class="text-sm md:hidden md:text-base text-slate-400 line-clamp-2">{{ blog?.description }}</p>
             </div>
             <div class="flex text-xs md:text-sm lg:text-base gap-4 pt-3 text-slate-400">
                 <h5>{{ blog.creator }}</h5>

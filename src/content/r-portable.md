@@ -17,6 +17,13 @@ draft: false
 - [Contoh Kode Program](#_3-contoh-program-r)
 
 <br>
+
+### Identitas
+- Nama  : Muhamad Iqbal Bahtiar
+- Nim   : 202351056
+- kelas : F
+
+<br>
 <br>
 
 **R**, adalah sebuah bahasa pemrograman dan lingkungan perangkat lunak yang dikembangkan untuk analisis statistik dan grafik. R sangat populer di kalangan peneliti, data scientist, dan analis statistik karena kemampuannya yang kuat dalam pengolahan data, pembuatan visualisasi, dan pengembangan model statistik.

@@ -41,11 +41,11 @@ watch(search, () => {
 </script>
 
 <template>
-    <div class="pb-4 absolute -top-6 left-1/2 w-[80%] sm:w-[75%] md:w-[450px] -translate-x-1/2">
+    <div class="pb-4 absolute z-50 -top-6 left-1/2 w-[80%] sm:w-[75%] md:w-[450px] -translate-x-1/2">
         <input type="text" v-model="search"
             class="px-6 outline-none text-md rounded-md py-2 md:py-3 bg-accent w-full"  v-motion="{
             initial: {
-                y: 100,
+                y: 25,
                 opacity: 0
             },
             enter: {
@@ -56,13 +56,13 @@ watch(search, () => {
                 }
             },
             leave: {
-                y: -100,
+                y: -25,
                 opacity: 0,
             }
         }">
 
         <div v-if="blogs.length"
-            class="w-full overflow-hidden flex flex-col gap-4 border border-accent bg-secondary rounded-md mt-2">
+            class="w-full animate-accordion-up overflow-hidden flex flex-col gap-4 border border-accent bg-secondary rounded-md mt-2">
             <CardSearchPost  v-for="blog in blogs" :blog="blog" />
         </div>
     </div>

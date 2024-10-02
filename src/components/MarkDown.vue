@@ -53,14 +53,12 @@ function addPreCopyButton() {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
-const { params } = useRoute()
-
 </script>
 
 <template>
   <div class="my-6 highlight-code" v-motion="{
     initial: {
-      y: 100,
+      y: 25,
       opacity: 0
     },
     enter: {
@@ -71,7 +69,7 @@ const { params } = useRoute()
       }
     },
     leave: {
-      y: -100,
+      y: -25,
       opacity: 0,
     }
   }">
