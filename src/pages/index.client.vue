@@ -8,7 +8,11 @@ async function handleRefresh(req: "tags" | "category", value: string) {
     await blog.handleQuery(req, value as string)
 }
 
-
+useSeoMeta({
+    author: "Iqbal Bahtiar",
+    ogType: "article",
+    ogImage: "/image/profile.jpg",    
+})
 
 function animateTitle() {
     const arr = [
@@ -73,9 +77,9 @@ onMounted(() => {
                 y: -25,
                 opacity: 0,
             }
-        }" v-on:handle-refresh="handleRefresh" :categories="blog.categories" />
+        }" v-if="blog.categories.length" v-on:handle-refresh="handleRefresh" :categories="blog.categories" />
 
-        <div class="flex flex-col md:flex-row gap-4 py-8 w-full ">
+        <div class="flex flex-col md:flex-row gap-4 py-8 w-full" v-if="blog.blogs.length">
             <div class="md:w-[40%] w-full flex flex-col gap-4" v-motion="{
                 initial: {
                     y: 25,
@@ -104,7 +108,7 @@ onMounted(() => {
                     y: 0,
                     opacity: 1,
                     transition: {
-                         delay: 300
+                        delay: 300
                     }
                 },
                 leave: {
@@ -112,10 +116,12 @@ onMounted(() => {
                     opacity: 0,
                 }
             }" class="flex flex-col w-full gap-3">
-                <CardPost v-for="blog in blog.blogs" :blog="blog"  />
+                <CardPost v-for="blog in blog.blogs" :blog="blog" />
             </div>
-            
+
         </div>
-        <button v-if="blog.pagging.page < blog.pagging.totalPage" class="px-6 py-2 text-slate-300 text-sm transition-all active:scale-95 bg-accent w-fit rounded-md self-center mt-6" @click="blog.handlePagination()">Load More</button>
+        <button v-if="blog.pagging.page < blog.pagging.totalPage"
+            class="px-6 py-2 text-slate-300 text-sm transition-all active:scale-95 bg-accent w-fit rounded-md self-center mt-6"
+            @click="blog.handlePagination()">Load More</button>
     </section>
 </template>

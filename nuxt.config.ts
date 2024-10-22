@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     },
     markdown: {
       tags: {}
-    }
+    },
+    documentDriven: true
   },
 
   postcss: {
@@ -36,12 +37,18 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/content',
     '@pinia/nuxt',
-    '@vueuse/motion/nuxt'
+    '@vueuse/motion/nuxt',
+    '@nuxtjs/sitemap'
   ],
+
+  site: {
+_context: ""
+  },
   
   app: {
     head: {
      title: 'Iqbal Bahtiar',
     }
-  }
+  },
+  
 })

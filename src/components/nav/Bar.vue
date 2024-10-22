@@ -1,7 +1,7 @@
 <template>
     <nav class="flex justify-between py-6 px-4 md:px-32 bg-primary-bg text-white">
-        <NuxtLink to="/" class="text-sm sm:text-base md:text-lg font-semibold">
-            < Blog />
+        <NuxtLink to="/" class="text-sm  sm:text-base md:text-lg font-semibold">
+            <span class="group-hover:translate-x-3"> < </span> <span class="text-yellow-400 font-semibold">Blog</span> <span class="group-hover:-translate-x-3"> /> </span>
         </NuxtLink>
 
         <div class="flex gap-6 text-xs md:text-sm font-semibold px-4 md:px-12">

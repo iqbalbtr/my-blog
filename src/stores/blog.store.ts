@@ -12,7 +12,8 @@ export const useBlog = defineStore('blog', {
             queryType: 'category',
             itemPerPage: 6,
             totalPage: 1
-        }
+        },
+        loading: false
     }),
     actions: {
         async init() {
@@ -23,6 +24,7 @@ export const useBlog = defineStore('blog', {
             this.setCategories(blogs);
             this.setBlog(blogs);
             this.setTags(blogs);
+            this.loading = true;
         },
         setCategories(blogs: Blog[]) {
 

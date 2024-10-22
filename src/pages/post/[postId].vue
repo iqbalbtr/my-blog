@@ -10,7 +10,11 @@ useSeoMeta({
     applicationName: 'blog articles',
     author: data.value?.creator,
     articleAuthor: data.value?.creator,
-    ogTitle: 'id',
+    ogTitle: data.value?.title,
+    articlePublishedTime: data.value?.created_at,
+    articleModifiedTime: data.value?.updated_at,
+    ogUrl: "blog.iqbalbahtiar.online",
+    articleTag: data.value?.tags
 })
 
 </script>
@@ -130,5 +134,6 @@ useSeoMeta({
             </ClientOnly>
             <SkeletonPost v-else />
         </section>
+        <NavToTop />
     </NuxtLayout>
 </template>
