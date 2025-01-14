@@ -113,7 +113,7 @@ useSeoMeta({
                             </svg>
                             <span class="font-semibold">{{ data?.category }}</span>
                         </h4>
-                        <div class="pt-2 md:pt-4 pb-2 flex gap-2 max-w-[80%]">
+                        <div class="pt-2 md:pt-4 pb-2 flex flex-wrap gap-2 max-w-[80%]">
                             <span v-for="(tag, index) in data?.tags"
                                 class="bg-cyan-600 text-cyan-100 text-xs sm:text-sm  md:text-lg font-semibold py-1 px-3 rounded-md">{{
                                     tag

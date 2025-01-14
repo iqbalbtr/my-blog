@@ -19,6 +19,7 @@ export const useBlog = defineStore('blog', {
         async init() {
             const blogs = await queryContent('/').sort(({ created_at: -1 })).limit(this.pagging.itemPerPage).find() as Blog[];
             const count = await queryContent("/").count();
+            
             this.pagging.item = count;
             this.pagging.totalPage = Math.floor(count/ this.pagging.itemPerPage);
             this.setCategories(blogs);

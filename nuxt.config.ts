@@ -14,9 +14,12 @@ export default defineNuxtConfig({
       theme: 'one-dark-pro',
       langs: [
         'r',
-        "js",
+        "javascript",
         "json",
-        "php"
+        "php",
+        "html",
+        "typescript",
+        "cmd"
       ],
     },
     markdown: {

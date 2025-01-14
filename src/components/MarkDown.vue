@@ -79,6 +79,9 @@ function addPreCopyButton() {
 
 <style>
 .highlight-code {
+  a {
+    text-decoration: underline;
+  }
 
   p,
   ul,
