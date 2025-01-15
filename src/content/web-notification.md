@@ -1,19 +1,20 @@
 ---
 title: Web Push Notification
 created_at: 2024-12-31
-update_at: 2024-10-14
+update_at: 2024-10-16
 description: 'Web Push notifikasi merupakan fitur pada web yang umumnya terdapat di web modern yang beruguna untuk menerima notifikasi dari server. Web Push notifikasi berkerja menggunakan service worker yang harus di inisialiasi terlebih dahulu pada web client. Fitur ini dapat menampilkan notification pada web secara real time meskipun client tidak sedang membuka web.'
 image: ''
-tags: [Personal]
+tags: [Programing, NodeJs, HonoJs, TypeScript, ReatTime]
 category: 'Tutorial'
 creator: Iqbal Bahtiar
 draft: false 
 ---
-
 ### **Apa Itu Web Push Notification dan Bagaimana Cara Kerjanya?**
 
 Web Push notifikasi merupakan fitur pada web yang umumnya terdapat di web modern yang beruguna untuk menerima notifikasi dari server. Web Push notifikasi berkerja menggunakan service worker yang harus di inisialiasi terlebih dahulu pada web client. Fitur ini dapat menampilkan notification pada web secara real time meskipun client tidak sedang membuka web.
+
 <br>
+
 ### Bagaimana Web Push Notification Bekerja?
 
 Secara teknis, web push notification menggunakan kombinasi teknologi seperti **Service Worker** dan **Push API**. Berikut proses kerjanya:
@@ -22,18 +23,32 @@ Secara teknis, web push notification menggunakan kombinasi teknologi seperti **S
 2. **Subscribing**: Jika pengguna menyetujui, browser akan mendaftarkan perangkat pengguna ke layanan push notification.
 3. **Server Push**: Ketika ada pesan yang ingin dikirim, server akan mengirimkannya ke browser melalui penyedia push (push service).
 4. **Notifikasi Tiba**: Browser menerima pesan dan memunculkan notifikasi di layar perangkat pengguna.
+
 <br>
+
 ### Kelebihan Web Push Notification
 
 1. **Real-Time**: Pesan sampai dalam hitungan detik, langsung ke layar pengguna.
 2. **Tidak Memerlukan Aplikasi**: Tidak seperti notifikasi aplikasi mobile, fitur ini bisa bekerja hanya dengan browser.
 3. **Efisien**: Cocok untuk menyampaikan informasi penting, seperti diskon, pengingat, atau berita terbaru.
 4. **Meningkatkan Retensi**: Membantu pengguna tetap terhubung dengan website kamu.
+
 <br>
+
+### Hal yang perlu dipersiapkan
+
+1. NodeJs & NPM [cara pemasangan](https://nodejs.org/en)
+2. TextEditor [vscode](https://code.visualstudio.com/download)
+3. Browser [chrome](https://www.google.com/intl/id_id/chrome/)
+
+<br>
+
 ### Implentasi 
 
 Pada contoh kali ini, `HonoJs` dan `Vanila Html` akan digunakan untuk kemudahan dalam pemahana kode
+
 <br>
+
 #### 1. Server
 
 Untuk dapat mengirim notifikasi ke client ada beberapa endpoint yang perlu kita buat agar dapat di gunakan untuk mengirm notifikasi
@@ -43,17 +58,17 @@ Sebelum beranjak ke implementasinya kita buat beberapa konfigurasinya di server
 ##### 1. Membuat project
 
 ```cmd
-pnpm create hono@latest
+npm create hono@latest
 ```
 
 > Setelah project di buat jangan lupa memilih template nodeJs
 
 ```cmd
 # Menambhakan library web push
-pnpm add web-push
+npm add web-push
 
 # Menambahkan typesnya
-pnpm add @types/web-push -D
+npm add @types/web-push -D
 ```
 
 > Setelah melakukan penginstalan lakukan generate vapidkey dan simpan valuenya kedalam variable
@@ -144,10 +159,12 @@ app.post("/notif", async c => {
 > Setelah semua hal tersebut dilakukan silahkan jalankan servernya
 
 ```cmd
-pnpm run dev
+npm run dev
 ```
 
+
 <br>
+
 #### 2.Client
 
 Setelah server dibuat, selanjutnya adalah penbuatan di sisi client. Client nantinya akan menerima dan mengirim request notifikasi ke server.
@@ -231,7 +248,9 @@ self.addEventListener("push", (event) => {
 > [!TIPS]
 > Jangan lupa untuk menaruh public key dari vapid key sebelumnya
 
+
 <br>
+
 #### 2. Interface
 
 ##### a. Buat element html untuk membuat interfacenya
@@ -560,7 +579,9 @@ self.addEventListener("push", (event) => {
 </html>
 ```
 
+
 <br>
+
 > Jika sudah, jalankan servernya lalu, jalankan live server untuk client nya
 
 > [!TIPS]
