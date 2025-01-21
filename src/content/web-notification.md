@@ -65,10 +65,10 @@ npm create hono@latest
 
 ```cmd
 # Menambhakan library web push
-npm add web-push
+npm i web-push
 
 # Menambahkan typesnya
-npm add @types/web-push -D
+npm i @types/web-push -D
 ```
 
 > Setelah melakukan penginstalan lakukan generate vapidkey dan simpan valuenya kedalam variable
