@@ -23,8 +23,16 @@ export default defineNuxtConfig({
       ],
     },
     markdown: {
-      tags: {}
+
+      remarkPlugins: {
+
+      },
+
+      tags: {
+
+      },
     },
+
     documentDriven: true
   },
 
@@ -45,13 +53,13 @@ export default defineNuxtConfig({
   ],
 
   site: {
-_context: ""
+    _context: ""
   },
-  
+
   app: {
     head: {
-     title: 'Iqbal Bahtiar',
+      title: 'Iqbal Bahtiar',
     }
   },
-  
+
 })

@@ -7,7 +7,10 @@ defineProps<{
 const observer = new MutationObserver(addPreCopyButton);
 observer.observe(document.body, { childList: true, subtree: true });
 
-document.addEventListener("DOMContentLoaded", addPreCopyButton);
+document.addEventListener("DOMContentLoaded", () => {
+  addPreCopyButton();
+  adminitionFilter();
+});
 
 function addPreCopyButton() {
   observer.disconnect();
@@ -53,6 +56,17 @@ function addPreCopyButton() {
   observer.observe(document.body, { childList: true, subtree: true });
 }
 
+function adminitionFilter() {
+  const adminitionTags = document.querySelectorAll("blockquote p span");
+
+  adminitionTags.forEach(el => {
+    const text = el.textContent?.split("!")[0];
+    if (text) {
+      el.textContent = text;
+    }
+  });
+}
+
 </script>
 
 <template>
@@ -73,7 +87,7 @@ function addPreCopyButton() {
       opacity: 0,
     }
   }">
-    <ContentRenderer :value="data" />
+    <ContentRenderer id="content" :value="data" />
   </div>
 </template>
 
@@ -81,6 +95,17 @@ function addPreCopyButton() {
 .highlight-code {
   a {
     text-decoration: underline;
+  }
+
+  .admonition.tips {
+    background-color: #fef6e4;
+    border-left: 4px solid #ffcc00;
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .admonition.tips p {
+    margin: 0;
   }
 
   p,
@@ -91,8 +116,13 @@ function addPreCopyButton() {
 
 
   h1 {
-    @apply text-[1.1rem] sm:text-[1.5rem] md:text-[2rem];
+    @apply text-[1.1rem] py-3 sm:text-[1.5rem] md:text-[2rem];
     font-weight: bolder;
+  }
+
+  p {
+    @apply pt-2 pb-3;
+    text-align: justify;
   }
 
   pre {
@@ -143,6 +173,11 @@ function addPreCopyButton() {
 
   blockquote {
     @apply border-l-4 pl-4 py-2 border-cyan-300 text-cyan-300;
+  }
+
+  blockquote p span {
+    display: block;
+    font-weight: 600
   }
 
   .line-code {
