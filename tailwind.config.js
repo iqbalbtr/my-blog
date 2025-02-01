@@ -13,12 +13,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#0B2447',
-        'secondary': '#0D2952',
-        'accent': '#051831',
-        'tint': '#DD00D4',
-        'primary-bg': '#0B2447',
-        'secondary-bg': '#0D2952'
+        'primary': 'var(--color-primary)',
+        'secondary': 'var(--color-secondary)',
+        'accent': 'var(--color-accent)',
+        'tint': 'var(--color-tint)',
+        'search': 'var(--color-search)',
+        'tint-bg': 'var(--color-tint-bg)',
+        'primary-bg': 'var(--color-primary-bg)',
+        'secondary-bg': 'var(--color-secondary-bg)',
+        'primary-text' : 'var(--text-primary)',
+        'secondary-text' : 'var(--text-secondary)',
       },
       screens: {
         'sm': '564px',

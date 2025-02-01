@@ -24,13 +24,13 @@ Setelah mengenal tentang auth mari berkenalan dengan JWT. **Json Web Token** mer
 
 ### Contoh token JWT
 
-```
-**eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9**.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VybmFtZSI6IklxYmFsIEJhaHRpYXIiLCJlbWFpbCI6ImlxYmFsYmFodGlhcjA0NUBnbWFpbC5jb20ifQ._wR5RcqFCV5ctabYs6jsJ8QA1GO1QJks6UrQX587GZg
+```cmd
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyLCJ1c2VybmFtZSI6IklxYmFsIEJhaHRpYXIiLCJlbWFpbCI6ImlxYmFsYmFodGlhcjA0NUBnbWFpbC5jb20ifQ._wR5RcqFCV5ctabYs6jsJ8QA1GO1QJks6UrQX587GZg
 ```
 
 ### Payload 
 
-```
+```json
 // Header 
 {
   "alg": "HS256",
@@ -69,6 +69,8 @@ Setelah berkenalan dengan JWT dan auth mari kita lanjut kedalam pembuatannya. Se
 
 ## Alur singkat authorization menggunakan JWT
 
+![Flow](/post/jwt-auth/flow.png)
+
 ## Hal yang perlu dipersiapkan
 
 1. NodeJs & NPM [cara pemasangan](https://nodejs.org/en)
@@ -83,7 +85,6 @@ npm init
 npm i express jsonwebtoken bcrypt
 ```
 
->[!TIPS]
 >Tambahan module nodemon untuk auto reload jika terdapat perubahan `npm i nodemon -D`
 ### Setup pacakge
 
@@ -180,7 +181,6 @@ app.post("/register", (req, res) => {
 })
 ```
 
->[!TIPS]
 >Jangan Lupa melakukan import bcrypt
 
 ```js
@@ -227,7 +227,6 @@ app.post("/login", (req, res) => {
 })
 ```
 
->[!TIPS]
 >Jangan Lupa melakukan import jwt
 
 ```js
