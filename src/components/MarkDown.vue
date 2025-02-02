@@ -111,18 +111,13 @@ function adminitionFilter() {
   p,
   ul,
   li {
-    @apply text-xs sm:text-base md:text-base
+    @apply text-lg;
   }
 
 
   h1 {
-    @apply text-[1.1rem] py-3 sm:text-[1.5rem] md:text-[2rem];
+    @apply py-3 sm:text-[1.7rem] md:text-[2rem] pt-2 pb-3;
     font-weight: bolder;
-  }
-
-  p {
-    @apply pt-2 pb-3;
-    text-align: justify;
   }
 
   pre {
@@ -130,22 +125,22 @@ function adminitionFilter() {
   }
 
   code {
-    @apply text-slate-400;
+    @apply text-secondary-text;
   }
 
   h2 {
     font-weight: bolder;
-    @apply text-[1.2rem] md:text-[1.5rem];
+    @apply text-[1.4rem] md:text-[1.5rem] pt-2 pb-3;
   }
 
   h3 {
-    @apply text-[1rem] md:text-[1.3rem];
+    @apply pt-2 pb-3 text-[1.3rem] md:text-[1.3rem];
     font-weight: bolder;
   }
 
   h4 {
     font-weight: bolder;
-    @apply text-[1rem] md:text-[1.2rem];
+    @apply text-[1.2rem] pt-2 pb-3 md:text-[1.2rem];
   }
 
   ul {
@@ -159,20 +154,20 @@ function adminitionFilter() {
   }
 
   p {
-    @apply text-[.8rem] md:text-[1rem]
+    @apply text-lg md:text-[1.3rem] pt-2 pb-3;
   }
 
   pre {
     @apply p-4 rounded-md bg-[#141617];
 
     code {
-      @apply text-xs sm:text-sm md:text-base
+      @apply sm:text-sm md:text-base;
     }
   }
 
 
   blockquote {
-    @apply border-l-4 pl-4 py-2 border-cyan-300 text-cyan-300;
+    @apply border-l-4 bg-tint-bg pl-4 py-2 border-tint text-tint pr-3 rounded-r-md my-4;
   }
 
   blockquote p span {
@@ -181,7 +176,7 @@ function adminitionFilter() {
   }
 
   .line-code {
-    @apply bg-cyan-800/50 py-0 px-1 rounded-md text-cyan-300;
+    @apply py-0 px-1 rounded-md text-tint;
   }
 
   img {

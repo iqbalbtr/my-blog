@@ -38,7 +38,7 @@
                 }
             }">
                 <h1 class="text-3xl md:text-4xl font-bold">Iqbal Bahtiar</h1>
-                <p class="text-xl pt-2 text-slate-400">Developer</p>
+                <p class="text-xl pt-2 text-secondary-text">Developer</p>
             </div>
 
 

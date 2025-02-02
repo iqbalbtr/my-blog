@@ -120,6 +120,9 @@ onMounted(() => {
             </div>
 
         </div>
+
+        <NavSetting />
+
         <button v-if="blog.pagging.page < blog.pagging.totalPage"
             class="px-6 py-2 text-slate-300 text-sm transition-all active:scale-95 bg-accent w-fit rounded-md self-center mt-6"
             @click="blog.handlePagination()">Load More</button>

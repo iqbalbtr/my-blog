@@ -2,6 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+:root {
+    --color-primary: #0B2447;
+    --color-secondary: #0D2952;
+    --color-accent: #051831;
+    --color-tint: #1549e6;
+    --color-tint-bg: #B2A5FF20;
+    --color-primary-bg: #0B2447;
+    --color-search: #6EACDA;
+    --color-secondary-bg: #0D2952;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+}
+
+.light {
+    --color-primary: #E0E0E0;
+    --color-secondary: #F5F5F5;
+    --color-accent: #051831;
+    --color-tint: #1549e6;
+    --color-tint-bg: #93c5fd40;
+    --color-primary-bg: #E0E0E0;
+    --color-search: #EEEEEE;
+    --color-secondary-bg: #F5F5F5;
+    --text-primary: #212121;
+    --text-secondary: #424242;
+}
+
+.dark {
+    --color-primary: #121212;
+    --color-secondary: #1E1E1E;
+    --color-accent: #051831;
+    --color-search: #3C3D37;
+    --color-tint: #1549e6;
+    --color-tint-bg: #2973B230;
+    --color-primary-bg: #121212;
+    --color-secondary-bg: #1E1E1E;
+    --text-primary: #e0e0e0;
+    --text-secondary: #a0a0a0;
+}
+
+* {
     scroll-behavior: smooth;
+}
+
+svg {
+    @apply text-primary-text;
 }

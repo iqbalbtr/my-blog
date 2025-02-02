@@ -1,10 +1,18 @@
+<script setup lang="ts">
+
+const theme = useTheme()
+
+</script>
+
 <template>
-    <nav class="flex justify-between py-6 px-4 md:px-32 bg-primary-bg text-white">
-        <NuxtLink to="/" class="text-sm  sm:text-base md:text-lg font-semibold">
-            <span class="group-hover:translate-x-3"> < </span> <span class="text-yellow-400 font-semibold">Blog</span> <span class="group-hover:-translate-x-3"> /> </span>
+    <nav :class="theme.currentMode" class="flex justify-between py-6 px-4 md:px-32 bg-primary-bg text-white">
+        <NuxtLink to="/" class="text-sm text-primary-text sm:text-base md:text-lg font-semibold">
+            <span class="group-hover:translate-x-3">
+                < </span> <span class="text-yellow-400 font-semibold">Blog</span> <span
+                        class="group-hover:-translate-x-3"> /> </span>
         </NuxtLink>
 
-        <div class="flex gap-6 text-xs md:text-sm font-semibold px-4 md:px-12">
+        <div class="flex gap-6 text-xs md:text-sm font-semibold text-primary-text px-4 md:px-12">
             <NuxtLink to="/about" class="flex gap-2 items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
