@@ -61,7 +61,7 @@
             }">
                 <ul class="flex justify-center flex-wrap text-sm pt-8 md:pt-0 md:justify-start font-semibold flex-warp gap-2 md:gap-6">
                     <li>
-                        <NuxtLink to="https:iqbalbahtiar.online" target="_blank" class="flex gap-2 items-center">
+                        <NuxtLink href="https:iqbalbahtiar.online" target="_blank" class="flex gap-2 items-center">
                             <span>Personal Web</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -73,7 +73,7 @@
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="https://github.com/iqbalbtr" target="_blank" class="flex gap-2 items-center">
+                        <NuxtLink href="https://github.com/iqbalbtr" target="_blank" class="flex gap-2 items-center">
                             <span>Github</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -85,7 +85,7 @@
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="https://www.facebook.com/btr.iqbal.3" target="_blank" class="flex gap-2 items-center">
+                        <NuxtLink href="https://www.facebook.com/btr.iqbal.3" target="_blank" class="flex gap-2 items-center">
                             <span>Facebook</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -97,7 +97,7 @@
                         </NuxtLink>
                     </li>
                     <li>
-                        <NuxtLink to="https://www.instagram.com/iqbal.b_/" target="_blank" class="flex gap-2 items-center">
+                        <NuxtLink href="https://www.instagram.com/iqbal.b_/" target="_blank" class="flex gap-2 items-center">
                             <span>Instagram</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"

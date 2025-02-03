@@ -13,9 +13,10 @@ useSeoMeta({
     ogTitle: data.value?.title,
     articlePublishedTime: data.value?.created_at,
     articleModifiedTime: data.value?.updated_at,
-    ogUrl: "blog.iqbalbahtiar.online",
+    ogUrl: "blog.iqbalbahtiar.online/post" + data.value?._path,
     articleTag: data.value?.tags
 })
+
 
 </script>
 <template>
