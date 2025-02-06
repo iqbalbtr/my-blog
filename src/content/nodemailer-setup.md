@@ -32,7 +32,7 @@ Dalam contoh ini akan menggunakan Oauth2 dengan akun google dengan mail api.
 
 - Node Js dan NPM [cara pemasangan](https://nodejs.org/en)
 - Editor Text [vscode](https://code.visualstudio.com/download)
-- Browser [undug](https://chromeenterprise.google/intl/id_id/download/)
+- Browser [unduh](https://chromeenterprise.google/intl/id_id/download/)
 - Akun google [akun](https://accounts.google.com/)
 
 ## Setup email

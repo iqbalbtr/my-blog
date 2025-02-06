@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "Varela Round";
+    src: url('/assets/fonts/VarelaRound-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --color-primary: #0B2447;
     --color-secondary: #0D2952;
@@ -43,6 +50,7 @@
 
 * {
     scroll-behavior: smooth;
+    font-family: 'Varela Round', sans-serif;
 }
 
 svg {

@@ -22,18 +22,7 @@ export default defineNuxtConfig({
         "cmd"
       ],
     },
-    markdown: {
-
-      remarkPlugins: {
-
-      },
-
-      tags: {
-
-      },
-    },
-
-    documentDriven: true
+    documentDriven: true,
   },
 
   postcss: {

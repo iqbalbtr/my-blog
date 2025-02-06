@@ -14,10 +14,10 @@ const route = useRoute()
         <div class="flex flex-col h-full justify-between">
             <div class="w-full">
                 <NuxtLink :href="{ path: `/post/${blog._stem}` }"
-                    class="hover:bg-gradient-to-r from-tint/20  w-full transition-all text-lg mb-2 md:mb-0 md:text-3xl py-1 border-l-4 pl-3 border-tint font-semibold line-clamp-2 md:max-w-[80%]">{{
+                    class="hover:bg-gradient-to-r from-tint/20  w-full transition-all text-base mb-2 md:mb-0 md:text-2xl py-1 border-l-4 pl-3 border-tint font-semibold line-clamp-2 md:max-w-[80%]">{{
                         blog.title }}</NuxtLink>
                 <div class="flex items-center gap-4">
-                    <h4 class="py-1 text-xs md:text-base font-semibold text-secondary-text flex items-center gap-2">
+                    <h4 class="py-1 text-xs md:text-sm font-semibold text-secondary-text flex items-center gap-2">
                         <svg class="text-primary-text" xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" id="calender">
                             <path fill="currentColor"
                                 d="M19,4H17V3a1,1,0,0,0-2,0V4H9V3A1,1,0,0,0,7,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V12H20Zm0-9H4V7A1,1,0,0,1,5,6H7V7A1,1,0,0,0,9,7V6h6V7a1,1,0,0,0,2,0V6h2a1,1,0,0,1,1,1Z">
@@ -34,7 +34,7 @@ const route = useRoute()
                         <span>{{ blog.category }}</span>
                     </NuxtLink>
                     <div class="pt-4  md:hidden lg:flex hidden pb-2 gap-2 items-center max-w-[80%]">
-                        <NuxtLink :to="{ query: { tag: route.query.tag === tag ? undefined : tag } }" v-for="(tag, i) in blog.tags.slice(0, 3)"
+                        <NuxtLink :to="{ query: { tag: route.query.tag === tag ? undefined : tag } }" v-for="(tag, i) in blog.tags.slice(0, 2)"
                             class="bg-tint text-white hover:scale-95 active:scale-90 transition-all text-sm py-1 px-3 rounded-md">{{ tag
                             }}</NuxtLink>
                     </div>

@@ -7,7 +7,7 @@ const isActive = ref(false);
 <template>
 
     <div class="fixed bottom-6 left-6 flex flex-col items-center">
-        <div v-if="isActive" class="absolute p-1 rounded-full animate-accordion-up flex flex-col bottom-[120%] items-center justify-center bg-secondary">
+        <div v-if="isActive" class="absolute p-1 rounded-full animate-accordion-up flex flex-col bottom-[120%] items-center justify-center bg-tint-bg">
             <ThemeSelect />
         </div>
 

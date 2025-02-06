@@ -40,7 +40,7 @@ useSeoMeta({
 
         <section class="md:px-12 px-5 md:py-8 py-4 rounded-2xl bg-secondary">
             <div v-if="status == 'success'" class="gap-4 flex flex-col justify-between mb-5">
-                <h1 class="text-2xl md:text-4xl font-bold" v-motion="{
+                <h1 class="text-2xl md:text-2xl font-bold" v-motion="{
                     initial: {
                         y: 25,
                         opacity: 0
@@ -77,7 +77,7 @@ useSeoMeta({
                     <div class="flex flex-col ">
                         <div class="flex gap-4 pb-1">
                             <h4
-                                class="py-1 text-xs sm:text-sm  md:text-lg font-semibold text-secondary-text flex items-center gap-2">
+                                class="py-1 text-xs sm:text-sm  md:text-base font-semibold text-secondary-text flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="lucide lucide-calendar">
@@ -89,7 +89,7 @@ useSeoMeta({
                                 <span>{{ formatDate(data?.created_at ?? '', '-') }}</span>
                             </h4>
                             <h4 v-if="data?.created_at !== data?.update_at"
-                                class="py-1 text-xs sm:text-sm  md:text-lg font-semibold text-secondary-text flex items-center gap-2">
+                                class="py-1 text-xs sm:text-sm  md:text-base font-semibold text-secondary-text flex items-center gap-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24"
                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round" class="lucide lucide-calendar-arrow-up">
@@ -104,7 +104,7 @@ useSeoMeta({
                             </h4>
                         </div>
                         <h4
-                            class="py-1 pl-1 text-xs sm:text-sm  md:text-lg rounded-md w-fit flex gap-2 items-center text-secondary-text">
+                            class="py-1 pl-1 text-xs sm:text-sm  md:text-base rounded-md w-fit flex gap-2 items-center text-secondary-text">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-folder-open-dot">
@@ -116,7 +116,7 @@ useSeoMeta({
                         </h4>
                         <div class="pt-2 md:pt-4 pb-2 flex flex-wrap gap-2 max-w-[80%]">
                             <span v-for="(tag, index) in data?.tags"
-                                class="bg-cyan-600 text-cyan-100 text-xs sm:text-sm  md:text-lg font-semibold py-1 px-3 rounded-md">{{
+                                class="bg-cyan-600 text-cyan-100 text-xs sm:text-sm font-semibold py-1 px-3 rounded-md">{{
                                     tag
                                 }}</span>
                         </div>
@@ -127,7 +127,7 @@ useSeoMeta({
                         <span>|</span>
                         <h4>{{ totalWord(data?.body?.children) }} Words</h4>
                     </div>
-                    <hr />
+                    <div class="h-0.5 w-full bg-tint-bg" />
                 </div>
             </div>
             <ClientOnly v-if="status == 'success'">

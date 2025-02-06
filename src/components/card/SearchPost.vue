@@ -20,7 +20,7 @@ defineProps<{
                         </svg>
                         <span>{{ formatDate(blog.created_at, "-") }}</span>
                     </h4>
-                    <h4 class="text-xs sm:text-sm md:text-base mt-3 px-3 py-1 bg-accent w-fit rounded-md">{{ blog.category }}</h4>
+                    <h4 class="text-xs text-white sm:text-sm mt-3 px-3 py-1 bg-tint w-fit rounded-md">{{ blog.category }}</h4>
                 </div>
 
                 <div class="flex gap-3 text-xs sm:text-sm md:text-base ">

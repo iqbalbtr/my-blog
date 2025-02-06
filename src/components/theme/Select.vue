@@ -3,7 +3,7 @@
 const isActive = ref(false)
 const theme = useTheme();
 
-const themeList = [
+const themeList: { name: "dark" | "light" | "default", color: string[] }[] = [
     {
         name: "default",
         color: ['#0B2447', '#0D2952']
@@ -37,8 +37,8 @@ const themeList = [
 
         <div class="absolute  animate-slide-left flex gap-3 left-[150%]" v-if="isActive">
             <button v-for="mode in themeList" @click="theme.switchTheme(mode.name)"
-            :class="theme.currentMode == mode.name && 'border-2 shadow-tint border-tint'"
-                class="w-9 flex bg-accen rotate-45 border overflow-hidden active:scale-90 rounded-full aspect-square">
+                :class="theme.currentMode == mode.name && 'border-2 shadow-tint border-tint'"
+                class="w-9 flex bg-accent rotate-45 border overflow-hidden active:scale-90 rounded-full aspect-square">
                 <div v-for="(col, index) in mode.color" :key="index" :style="`background-color: ${col};`"
                     class="w-full h-full" />
             </button>

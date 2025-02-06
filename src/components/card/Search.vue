@@ -62,7 +62,7 @@ watch(search, () => {
         }">
 
         <div v-if="blogs.length"
-            class="w-full animate-accordion-up overflow-hidden flex flex-col gap-4 border border-accent bg-secondary rounded-md mt-2">
+            class="w-full animate-accordion-up overflow-hidden flex flex-col gap-4 border bg-secondary rounded-md mt-2">
             <CardSearchPost  v-for="blog in blogs" :blog="blog" />
         </div>
     </div>
